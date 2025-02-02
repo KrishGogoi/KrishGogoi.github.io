@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+</head>
+
+<body>
+  <nav id="desktop-nav">
+    <div class="logo">Krishna's Portfolio</div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav id="hamburger-nav">
+    <div class="logo">Krishna Gogoi</div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+  <section id="profile">
+    <div class="section__pic-container">
+      <img class="rounded-image" src="./assets/me_bg1_copy.JPG" />
+    </div>
+    <div class="section__text">
+      <p class="section__text__p1">Hello, I'm</p>
+      <h1 class="title">Krishna Gogoi</h1>
+      <br>
+      <p class="section__text__p2">Data Analyst</p>
+      <!-- Element to contain animated typing -->
+      <span id="typing-animation" style="font-size: large;"></span>
+
+      <script>
+
+        // Initialize the typing animation
+        const typingAnimationElement = document.getElementById('typing-animation');
+
+        // Create an array of typing text
+        const typingTexts = [
+          '"Turning data into decisions, one insight at a time"      '
+        ];
+
+        // Create a function to display the typing animation for a given text
+        function playTypingAnimation(text) {
+          // Loop through each character and add it to the element
+          for (let i = 0; i < text.length; i++) {
+            setTimeout(() => {
+              typingAnimationElement.textContent += text[i];
+            }, i * 100); // Increase the delay to slow down the typing animation
+          }
+
+          // Once the animation is complete, reset the text and start over
+          setTimeout(() => {
+            typingAnimationElement.textContent = '';
+            playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+          }, text.length * 200);
+        }
+
+        // Start the typing animation loop
+        playTypingAnimation(typingTexts[0]);
+
+      </script>
+
+      <br>
+      <br>
+      <br>
+
+      <div class="btn-container">
+        <button class="btn btn-color-2" onclick="href='#'">
+          Download CV
+        </button>
+        <button class="btn btn-color-1" onclick="location.href='#contact'">
+          Contact Info
+        </button>
+      </div>
+
+      <div id="socials-container">
+        <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
+          onclick="location.href='https://www.linkedin.com/in/krishnagogoi10/'" />
+        <img src="./assets/github.png" alt="My Github profile" class="icon"
+          onclick="location.href='https://github.com/KrishGogoi'" />
+        <img src="./assets/instagram.png" alt="My Instagram profile" class="icon"
+          onclick="location.href='https://www.instagram.com/krishna.gogoi_/'" />
+        <img src="./assets/facebook.png" alt="My Facebook profile" class="icon"
+          onclick="location.href='https://www.facebook.com/krishna.gogoi.52438'" />
+      </div>
+    </div>
+  </section>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <section id="about">
+    <h1 class="title">About Me</h1>
+    <div class="section-container">
+      <div class="section__pic-container" style="margin-top: 30px;">
+        <img src="./assets/me_icon.jpeg" alt="Profile picture" class="about-pic" />
+      </div>
+      <div class="about-details-container">
+
+        <div class="text-container">
+          <p>
+            Name: Krishna Gogoi <br>
+            Role: Data Analyst <br>
+            Address: Guwahati, Assam <br>
+            <br>
+            A detail-oriented and analytical thinker with a strong foundation in data analysis, statistics and
+            visualization. Skilled in Python, SQL and Excel to derive insights and solve business problems. With
+            hands-on experience working with datasets, creating dashboards, and presenting actionable insights to
+            support decision-making
+          </p>
+        </div>
+
+        <div class="about-containers">
+          <div class="details-container" style="margin-top: 15px">
+            <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+            <h3>Schooling</h3>
+            <p>Kendriya Vidyalaya ONGC Nazira<br /> (2007-2019)</p>
+          </div>
+
+          <div class="details-container" style="margin-top: 15px">
+            <img src="./assets/education.png" alt="Education icon" class="icon" />
+            <h3>Graduation</h3>
+            <p>Bachelors of Computer Application<br />Guwahati University (2020-2023)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#experience'" />
+  </section>
+
+  <section id="experience">
+    <p class="section__text__p1">Explore My</p>
+    <h1 class="title">Skill-set</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container">
+          <h2 class="experience-sub-title">Data analysis & visualization tools</h2>
+          <br>
+          <div class="article-container">
+            <article>
+              <img src="./assets/excel.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Excel</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/sql.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>SQL</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/power bi.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Power BI</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/tableau.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Tableau</h3>
+                <p>Basic</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/python.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Python</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#projects'" />
+  </section>
+
+  <section id="projects">
+    <p class="section__text__p1">Browse My Recent</p>
+    <h1 class="title">Projects</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./images/database.jpg" alt="Project 1" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">SQL Project</h2>
+          <p>Created a database for a store in MySQL to optimize data storage and retrieval. Used JOINS and VIEWS to
+            extract data from different tables</p>
+          <br>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/KrishGogoi/MySQL_Projects/blob/main/Create_Store_Database_And_EDA_.sql'">
+              Github
+            </button>
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/KrishGogoi/MySQL_Projects/blob/main/Create_Store_Database_And_EDA_.sql'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./images/amazon.jpg" alt="Project 2" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">Python project</h2>
+          <p>Performed data cleaning & EDA on Amazon sales data using Python (Pandas, Matplotlib). Visualized valuable
+            insights on customer behaviour.</p>
+          <br>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/KrishGogoi/Python_pandas/blob/main/Data_cleaning.ipynb'">
+              Github
+            </button>
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/KrishGogoi/Python_pandas/blob/main/Data_cleaning.ipynb'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./images/power bi.png" alt="Project 3" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">Power BI project</h2>
+          <p>Designed a power bi dashboard for Blink-IT sales to track and analyze the online sales data acorss India.
+          </p>
+          <br>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/KrishGogoi/PowerBI_Dashboard/blob/main/Blink_it_Dashboard.png'">
+              Github
+            </button>
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/KrishGogoi/PowerBI_Dashboard/blob/main/Blink_it_Dashboard.png'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./images/tableau.jpg" alt="Project 3" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">Tableau project</h2>
+          <p>This Tableau dashboard gives meaningful insights on Electric-Vehicles sales and popularity in recent years.
+          </p>
+          <br>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://public.tableau.com/app/profile/krishna.gogoi/viz/ElectricVehicleInsights_17364162173260/Dashboard1?publish=yes'">
+              Github
+            </button>
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://public.tableau.com/app/profile/krishna.gogoi/viz/ElectricVehicleInsights_17364162173260/Dashboard1?publish=yes'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#contact'" />
+  </section>
+  <section id="contact">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
+    <div class="contact-info-upper-container">
+      <div class="contact-info-container">
+        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+        <p><a href="mailto:examplemail@gmail.com">Email</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+        <p><a href="https://www.linkedin.com/in/krishnagogoi10/">LinkedIn</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="./assets/instagram.png" alt="LinkedIn icon" class="icon contact-icon" />
+        <p><a href="https://www.instagram.com/krishna.gogoi_/">Instagram</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="./assets/facebook.png" alt="LinkedIn icon" class="icon contact-icon" />
+        <p><a href="https://www.facebook.com/krishna.gogoi.52438">Facebook</a></p>
+      </div>
+    </div> 
+  </section>
+  
+  <div class="contact-right">
+    <form name="submit-to-google-sheet">
+      <input type="text" name="Name" placeholder="Your Name" required>
+      <input type="text" name="Email" placeholder="Your Email" required>
+      <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+      <button type="submit" class="btn btn2">Submit</button>
+    </form>
+    <span id="msg"></span>
+  </div> 
+
+  <footer>
+    <nav>
+      <div class="nav-links-container">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+  <script src="script.js"></script>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzngGaJxk41sl7swNhkZTX5oaRb4_rHQITNcxpjWn_YJMHC5SttZrbUYWauIu5xH0ga/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+
+</html>
